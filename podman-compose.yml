@@ -1,7 +1,7 @@
 version: '3'
 services:
   gitlfs:
-    image: docker.io/shaunsund/gitlfs:latest
+    image: docker.io/bluepantsdev/gitlfs:latest
     volumes:
       - ~/config:/config
       - ~/data:/data
