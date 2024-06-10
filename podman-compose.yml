@@ -3,5 +3,5 @@ services:
   gitlfs:
     image: docker.io/bluepantsdev/gitlfs:latest
     volumes:
-      - ~/config:/config
-      - ~/data:/data
+      - config:/config
+      - data:/data

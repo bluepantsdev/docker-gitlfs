@@ -1,4 +1,0 @@
-#!/bin/bash
-
-# Print a message to the container log
-echo "This is just a template and placeholder until you customize this script."

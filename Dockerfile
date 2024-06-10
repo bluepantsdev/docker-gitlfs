@@ -1,6 +1,12 @@
 # Use the latest Arch Linux base image
 FROM archlinux:latest
 
+# Set a build-time variable for the tag
+ARG BUILD_TAG=1.0.3
+
+# Set a runtime environment variable
+ENV RUN_TAG=$BUILD_TAG
+
 # Update the package lists
 RUN pacman -Syu --noconfirm
 
@@ -10,13 +16,16 @@ RUN pacman -S --noconfirm git git-lfs
 # Set the working directory
 WORKDIR /root
 
-# Copy the config.template file into the image
-COPY config.template /root/config.template
+# Copy the scripts into the image
+COPY scripts/*.sh /root
 
-# Copy the gitconfig.template file into the image
-COPY gitlfspull.sh.template /root/gitlfspull.sh.template
+# Make the scripts executable
+RUN chmod +x /root/*.sh
 
-# Install git-lfs in the default account
+# Copy the configs.template file into the image
+COPY config.template /root
+
+# Install git-lfs
 RUN git lfs install
 
 # Copy the entrypoint script into the image
