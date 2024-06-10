@@ -16,7 +16,7 @@ fi
 # if /config/_cron.sh.inc does not exist, copy it from /root/_cron.sh.inc
 if [ ! -f /config/_cron.sh ]; then
   cp /root/_cron.sh /config/_cron.sh
-  chmod 754 /config/_cron.sh.inc
+  chmod 754 /config/_cron.sh
 fi
 
 # Read the config file and set the interval
