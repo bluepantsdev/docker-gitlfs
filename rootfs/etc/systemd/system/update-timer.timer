@@ -1,0 +1,9 @@
+[Unit]
+Description=Update gitlfspull timer
+
+[Timer]
+OnBootSec=2s
+OnUnitActiveSec=60m
+
+[Install]
+WantedBy=timers.target

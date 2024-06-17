@@ -1,0 +1,8 @@
+[Unit]
+Description=git lfs pull on a schedule
+After=network.target
+
+[Service]
+ExecStart=/config/gitlfspull.sh
+StandardOutput=journal+console
+StandardError=journal+console

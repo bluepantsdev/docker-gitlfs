@@ -34,8 +34,12 @@ export container_tag="<nexttag>"
 After making changes to the scripts, Dockerfile, etc build the image and start a container.
 
 ```bash
-podman build -t $container_image:$container_tag -t docker.io/bluepantsdev/gitlfs:$container_tag -t docker.io/bluepantsdev/gitlfs:latest.
-podman run -it -v ~/config:/config -v ~/data:/data $container_image:$container_tag
+# Build the container
+podman build -t $container_image:$container_tag .
+# Run with the interactive flag to test the container
+podman run -it --name gitlfs -v ./config:/config -v ./data:/data $container_image:$container_tag
+# run with the daemon flag to run in the background
+podman run -t -d --name gitlfs -v ./config:/config -v ./data:/data $container_image:$container_tag
 ```
 If all looks good, then go ahead and push the image to the registry.
 

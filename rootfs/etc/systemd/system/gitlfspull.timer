@@ -1,0 +1,9 @@
+[Unit]
+Description=git lfs pull on a schedule
+
+[Timer]
+OnBootSec=30
+OnUnitActiveSec=30s
+
+[Install]
+WantedBy=timers.target

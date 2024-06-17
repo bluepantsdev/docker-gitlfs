@@ -1,0 +1,10 @@
+[Unit]
+Description=Update gitlfspull timer
+
+[Service]
+ExecStart=/usr/local/bin/update-timer.sh
+StandardOutput=journal+console
+StandardError=journal+console
+
+[Install]
+WantedBy=multi-user.target
