@@ -1,2 +1,8 @@
+# Ignore .vscode folder
 .vscode/settings.json
+
+# ignore macOS detritus
 .DS_Store
+
+# Ignore /config/ files
+config/*
